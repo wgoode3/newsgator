@@ -1,0 +1,9 @@
+<h1>Ars Technica</h1>
+
+<div *ngFor="let article of articles">
+    <app-article [article]="article"></app-article>
+</div>
+
+<form (submit)="goToHome()">
+    <input type="submit" />
+</form>

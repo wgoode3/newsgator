@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpService } from './http.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newsgator';
+
+  constructor(private _http : HttpService) {}
+
+  ngOnInit() {
+    let observable = this._http.getBBC();
+    observable.subscribe(data => {
+      console.log(data);
+    });
+  }
+
 }
